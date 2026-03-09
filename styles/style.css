@@ -72,7 +72,6 @@
   font-family:
     var(--main-font-family),
     -apple-system;
-  font-variation-settings: "slnt" 0;
   background-image:
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
@@ -187,6 +186,7 @@
   display: inline-block;
   font-size: var(--main-font-family-text-size, 1.125rem);
   font-weight: var(--main-font-family-text-weight-bold, 715);
+  font-variation-settings: "slnt" 0;
   padding: 4px 10px;
 }
 
@@ -210,6 +210,7 @@
   font-size: var(--main-font-family-text-size, 1.125rem);
   font-weight: var(--main-font-family-text-weight-regular, 410);
   line-height: var(--main-font-family-description-text-line-height, 1.3125rem);
+  font-variation-settings: "slnt" 0;
 }
 
 .card__buttons {
