@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    /*colors*/
+    --heart-particles: #f00;
+    --heart-body: transparent;
+    --heart-plus: transparent;
+    --heart-contour: #000;
+    /*fonts*/
+    --main-font-family: 'Inter Variable';
+    --decoration-font-family: 'Press Start 2P';
+    --header-text-line-height: 1em;
+    --main-font-family-text-size: 1.125rem;
+    --main-font-family-title-text-line-height: 1em;
+    --main-font-family-description-text-line-height: 1.3125rem;
+    --decoration-font-family-text-size: 0.875rem;
+    --decoration-font-family-text-line-height: 1em;
+    --decoration-font-family-text-line-height-button: 0.9em;
+    --decoration-font-family-text-line-height-dialog-window-text: 1.5em;
+    --decoration-font-family-text-weight: 400;
+    --main-font-family-text-weight-bold: 715;
+    --main-font-family-text-weight-regular: 410;
+}
