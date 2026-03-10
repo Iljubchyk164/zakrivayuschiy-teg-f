@@ -10,10 +10,6 @@
 
 */
 
-*:focus {
-  outline: none;
-}
-
 /* svg heart */
 
 .heart-contour {
@@ -71,7 +67,7 @@
 .page {
   font-family:
     var(--main-font-family),
-    -apple-system;
+    sans-serif;
   font-variation-settings:
     "wght" var(--main-font-family-text-weight-regular, 410),
     "slnt" 0;
@@ -100,17 +96,38 @@
 }
 
 .button {
-  border: 2px solid #000;
-  background-color: transparent;
+  position: relative;
+  transform-origin: 0 0;
+  color: #000;
+  border: 2px solid currentColor;
+  background-color: #fff;
   font-size: var(--decoration-font-family-text-size, 0.875rem);
   font-variation-settings: normal;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  block-size: 100%;
+  background-color: #fff;
+  inline-size: 0%;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  transition: inline-size 0.5s linear;
+}
+
+.button:hover::after {
+  inline-size: 100%;
 }
 
 .decorated-zone {
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--decoration-font-family);
+  font-family: var(--decoration-font-family), sans-serif;
   font-weight: var(--decoration-font-family-text-weight, 400);
   font-size: var(--decoration-font-family-text-size, 0.875rem);
   line-height: var(--decoration-font-family-text-line-height, 1em);
@@ -202,6 +219,7 @@
   display: block;
   width: 100%;
   object-fit: cover;
+  object-position: center;
   aspect-ratio: 1 / 1;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -241,24 +259,28 @@
   cursor: pointer;
 }
 
-.card__icon-button:hover {
-  --heart-body: #000;
-  --heart-plus: #000;
+.card__icon-button:hover .heart-body,
+.card__icon-button:hover .heart-plus {
+  fill: #000;
 }
 
-.card__icon-button:active {
-  --heart-body: #f00;
-  --heart-plus: #f00;
+.card__icon-button:active .heart-body,
+.card__icon-button:active .heart-plus {
+  fill: #f00;
+}
+
+.card__icon-button:focus {
+  outline: none;
 }
 
 .card__icon-button:focus-visible {
   outline: 2px solid #000;
 }
 
-.like-icon.is-liked {
-  --heart-body: #f00;
-  --heart-plus: #f00;
-  --heart-contour: #f00;
+.like-icon.is-liked .heart-body,
+.like-icon.is-liked .heart-plus,
+.like-icon.is-liked .heart-contour {
+  fill: #f00;
 }
 
 .like-icon.is-liked .heart-all {
@@ -270,42 +292,16 @@
 }
 
 .card__like-button {
-  position: relative;
-  transform-origin: 0 0;
   block-size: 38px;
   inline-size: 130px;
-  transition: color 0.5s linear;
-  z-index: 0;
-  cursor: pointer;
 }
 
-.card__like-button::after {
-  position: absolute;
-  content: "";
-  block-size: 100%;
-  background-color: #000;
-  inline-size: 0%;
-  top: 0;
-  left: 0;
-  transition: inline-size 0.5s linear;
-  z-index: -1;
-}
-
-.card__like-button:hover {
-  color: #fff;
-}
-
-.card__like-button:hover::after {
-  inline-size: 100%;
+.card__like-button:focus {
+  outline: none;
 }
 
 .card__like-button:focus-visible {
   box-shadow: 2px 2px #000;
-}
-
-.button-text {
-  position: relative;
-  z-index: 1;
 }
 
 .main__dialog-button {
