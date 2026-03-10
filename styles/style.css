@@ -123,6 +123,14 @@
   inline-size: 100%;
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px #000;
+}
+
 .decorated-zone {
   position: absolute;
   top: 25px;
@@ -294,14 +302,6 @@
 .card__like-button {
   block-size: 38px;
   inline-size: 130px;
-}
-
-.card__like-button:focus {
-  outline: none;
-}
-
-.card__like-button:focus-visible {
-  box-shadow: 2px 2px #000;
 }
 
 .main__dialog-button {
