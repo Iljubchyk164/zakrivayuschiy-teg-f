@@ -107,11 +107,6 @@
 }
 
 .decorated-zone {
-  position: relative;
-}
-
-.decorated-zone::after {
-  content: "</HTML>";
   position: absolute;
   top: 25px;
   right: 25px;
@@ -197,6 +192,10 @@
     "wght" var(--main-font-family-text-weight-bold, 715),
     "slnt" 0;
   padding: 4px 10px;
+}
+
+.card__image-container {
+  position: relative;
 }
 
 .card__image {
@@ -376,6 +375,7 @@
 .dialog-window__button {
   width: 100%;
   height: 38px;
+  text-transform: uppercase;
 }
 
 @media (width >= 700px) {
